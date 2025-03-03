@@ -1,0 +1,17 @@
+### Test Measurement API - Create a New Entry
+POST http://localhost:5000/api/measurements
+Content-Type: application/json
+
+{
+    "weight": 70,
+    "height": 1.75,
+    "waistCircumference": 85,
+    "gender": "Male",
+    "systolicBP": 120,
+    "diastolicBP": 80,
+    "bloodGlucose": 5.2,
+    "totalCholesterol": 180,
+    "hdlCholesterol": 50,
+    "ldlCholesterol": 100,
+    "timeAfterMeal": "2 hours"
+}

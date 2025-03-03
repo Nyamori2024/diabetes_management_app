@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.use('/api/measurements', measurementRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT
 
 // Ensure the database connects before starting the server
 connectDB().then(() => {

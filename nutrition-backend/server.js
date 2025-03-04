@@ -9,7 +9,13 @@ const measurementRoutes = require('./routes/measurementRoutes');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+    cors({
+      origin: "https://diabetes-management-ui.onrender.com", // Your frontend URL
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    })
+  );
 app.use(bodyParser.json());
 
 app.use('/api/measurements', measurementRoutes);

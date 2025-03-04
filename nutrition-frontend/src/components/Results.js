@@ -11,7 +11,7 @@ const Results = () => {
     useEffect(() => {
         const fetchResults = async () => {
             try {
-                const response = await fetch("/api/measurements/history");
+                const response = await fetch("https://diabetes-management-app-lxa7.onrender.com/api/measurements/history");
                 if (!response.ok) throw new Error("Failed to fetch results");
                 const data = await response.json();
                 setResults(data);
@@ -23,21 +23,7 @@ const Results = () => {
         fetchResults();
     }, []);
 
-    // Delete a result
-    const handleDelete = async (id) => {
-        try {
-            const response = await fetch(`/api/measurements/${id}`, {
-                method: "DELETE",
-            });
-            if (!response.ok) throw new Error("Failed to delete result");
-
-            // Update the UI by filtering out the deleted result
-            setResults((prevResults) => prevResults.filter((result) => result._id !== id));
-        } catch (error) {
-            console.error("Error deleting result:", error);
-        }
-    };
-
+    
     // Navigate to detailed result view
     const handleViewDetails = (result) => {
         navigate("/result", { state: { result } });

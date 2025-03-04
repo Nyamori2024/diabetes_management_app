@@ -57,7 +57,7 @@ const MeasurementsForm = () => {
         };
 
         try {
-            const response = await fetch("/api/measurements", {
+            const response = await fetch("https://diabetes-management-app-lxa7.onrender.com/api/measurements", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formDataWithConvertedHeight),
